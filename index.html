@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Stress Test</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
+</head>
+<body>
+<div id="ui">
+    <h1>GPU Stress Test</h1>
+
+    <div class="control-group">
+        <label for="countSlider">Object Count: <span id="countLabel" class="value-display">1000</span></label>
+        <input type="range" id="countSlider" min="100" max="15000" value="1000" step="100">
+    </div>
+
+    <div class="control-group">
+        <label for="lightSlider">Light Count: <span id="lightLabel" class="value-display">3</span></label>
+        <input type="range" id="lightSlider" min="0" max="10" value="3" step="1">
+    </div>
+
+    <div class="control-group">
+        <label for="complexitySlider">Object Complexity: <span id="complexityLabel" class="value-display">Medium</span></label>
+        <input type="range" id="complexitySlider" min="1" max="3" value="2" step="1">
+    </div>
+
+    <div id="performance">
+        <div>
+            <span>FPS:</span>
+            <span id="fpsCounter" class="value-display">0</span>
+        </div>
+        <div>
+            <span>Object Count:</span>
+            <span id="objectCounter" class="value-display">0</span>
+        </div>
+    </div>
+
+    <div class="warning">Warning: High load may heat your device</div>
+</div>
+
+<div id="instructions">
+    <h3>Instructions</h3>
+    <p>Use sliders to control object and light count. Watch FPS change in real time. High load may slow your device or increase heat.</p>
+</div>
+
+<div id="loading">
+    <div class="loader"></div>
+    <p>Initializing 3D scene...</p>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
